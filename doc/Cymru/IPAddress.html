@@ -1,0 +1,759 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Cymru::IPAddress
+  
+    &mdash; Documentation by YARD 0.7.1
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (I)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Cymru.html" title="Cymru (module)">Cymru</a></span></span>
+     &raquo; 
+    <span class="title">IPAddress</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Cymru::IPAddress
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Cymru::IPAddress</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="DNSquery.html" title="Cymru::DNSquery (module)">DNSquery</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/cymruwhois.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="ORIGIN-constant" class="">ORIGIN =
+          
+        </dt>
+        <dd><pre class="code"><span class='string val'>&quot;origin.asn.cymru.com&quot;</span>
+</pre></dd>
+      
+        <dt id="ORIGIN6-constant" class="">ORIGIN6 =
+          
+        </dt>
+        <dd><pre class="code"><span class='string val'>&quot;origin6.asn.cymru.com&quot;</span>
+</pre></dd>
+      
+        <dt id="BOGON-constant" class="">BOGON =
+          
+        </dt>
+        <dd><pre class="code"><span class='string val'>&quot;bogons.cymru.com&quot;</span>
+</pre></dd>
+      
+    </dl>
+  
+
+
+  
+  
+  
+  
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allocdate-instance_method" title="#allocdate (instance method)">- (Object) <strong>allocdate</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute allocdate.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#asname-instance_method" title="#asname (instance method)">- (Object) <strong>asname</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute asname.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#asnum-instance_method" title="#asnum (instance method)">- (Object) <strong>asnum</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute asnum.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cidr-instance_method" title="#cidr (instance method)">- (Object) <strong>cidr</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute cidr.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#country-instance_method" title="#country (instance method)">- (Object) <strong>country</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute country.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#registry-instance_method" title="#registry (instance method)">- (Object) <strong>registry</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute registry.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (IPAddress) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A new instance of IPAddress.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#whois-instance_method" title="#whois (instance method)">- (Object) <strong>whois</strong>(addr) </a>
+    
+
+    
+      (also: #lookup)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Cymru::IPAddress (class)">IPAddress</a></span></tt>) <strong>initialize</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of IPAddress
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cymruwhois.rb', line 31</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <span id="allocdate-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="allocdate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allocdate</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute allocdate
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cymruwhois.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='allocdate identifier id'>allocdate</span>
+  <span class='@allocdate ivar id'>@allocdate</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="asname-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="asname-instance_method">
+  
+    - (<tt>Object</tt>) <strong>asname</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute asname
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cymruwhois.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='asname identifier id'>asname</span>
+  <span class='@asname ivar id'>@asname</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="asnum-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="asnum-instance_method">
+  
+    - (<tt>Object</tt>) <strong>asnum</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute asnum
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cymruwhois.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='asnum identifier id'>asnum</span>
+  <span class='@asnum ivar id'>@asnum</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="cidr-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="cidr-instance_method">
+  
+    - (<tt>Object</tt>) <strong>cidr</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute cidr
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cymruwhois.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='cidr identifier id'>cidr</span>
+  <span class='@cidr ivar id'>@cidr</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="country-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="country-instance_method">
+  
+    - (<tt>Object</tt>) <strong>country</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute country
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cymruwhois.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='country identifier id'>country</span>
+  <span class='@country ivar id'>@country</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="registry-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="registry-instance_method">
+  
+    - (<tt>Object</tt>) <strong>registry</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute registry
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cymruwhois.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='registry identifier id'>registry</span>
+  <span class='@registry ivar id'>@registry</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="whois-instance_method">
+  
+    - (<tt>Object</tt>) <strong>whois</strong>(addr) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='lookup-instance_method'>lookup</span></span>
+    </span>
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cymruwhois.rb', line 34</span>
+
+<span class='def def kw'>def</span> <span class='whois identifier id'>whois</span><span class='lparen token'>(</span><span class='addr identifier id'>addr</span><span class='rparen token'>)</span>
+  <span class='ip identifier id'>ip</span> <span class='assign token'>=</span> <span class='IPAddr constant id'>IPAddr</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='addr identifier id'>addr</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='ip identifier id'>ip</span><span class='dot token'>.</span><span class='ipv4? fid id'>ipv4?</span>
+    <span class='revdns identifier id'>revdns</span> <span class='assign token'>=</span> <span class='ip identifier id'>ip</span><span class='dot token'>.</span><span class='reverse identifier id'>reverse</span><span class='dot token'>.</span><span class='sub identifier id'>sub</span><span class='lparen token'>(</span><span class='string val'>&quot;in-addr.arpa&quot;</span><span class='comma token'>,</span> <span class='ORIGIN constant id'>ORIGIN</span><span class='rparen token'>)</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='ip identifier id'>ip</span><span class='dot token'>.</span><span class='ipv6? fid id'>ipv6?</span>
+    <span class='revdns identifier id'>revdns</span> <span class='assign token'>=</span> <span class='ip identifier id'>ip</span><span class='dot token'>.</span><span class='reverse identifier id'>reverse</span><span class='dot token'>.</span><span class='sub identifier id'>sub</span><span class='lparen token'>(</span><span class='string val'>&quot;ip6.arpa&quot;</span><span class='comma token'>,</span> <span class='ORIGIN6 constant id'>ORIGIN6</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  
+  <span class='ansip identifier id'>ansip</span> <span class='assign token'>=</span> <span class='intxt identifier id'>intxt</span><span class='lparen token'>(</span><span class='revdns identifier id'>revdns</span><span class='rparen token'>)</span>
+  <span class='@asnum ivar id'>@asnum</span> <span class='assign token'>=</span> <span class='ansip identifier id'>ansip</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span>
+  <span class='@cidr ivar id'>@cidr</span> <span class='assign token'>=</span> <span class='ansip identifier id'>ansip</span><span class='lbrack token'>[</span><span class='integer val'>1</span><span class='rbrack token'>]</span>
+  <span class='@country ivar id'>@country</span> <span class='assign token'>=</span> <span class='ansip identifier id'>ansip</span><span class='lbrack token'>[</span><span class='integer val'>2</span><span class='rbrack token'>]</span>
+  <span class='@registry ivar id'>@registry</span> <span class='assign token'>=</span> <span class='ansip identifier id'>ansip</span><span class='lbrack token'>[</span><span class='integer val'>3</span><span class='rbrack token'>]</span>
+  <span class='@allocdate ivar id'>@allocdate</span> <span class='assign token'>=</span> <span class='ansip identifier id'>ansip</span><span class='lbrack token'>[</span><span class='integer val'>4</span><span class='rbrack token'>]</span>
+  
+  <span class='ansasnum identifier id'>ansasnum</span> <span class='assign token'>=</span> <span class='Cymru constant id'>Cymru</span><span class='colon2 op'>::</span><span class='ASNumber constant id'>ASNumber</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+  <span class='ansasnum identifier id'>ansasnum</span><span class='dot token'>.</span><span class='whois identifier id'>whois</span><span class='lparen token'>(</span><span class='@asnum ivar id'>@asnum</span><span class='rparen token'>)</span>
+  <span class='@asname ivar id'>@asname</span> <span class='assign token'>=</span> <span class='ansasnum identifier id'>ansasnum</span><span class='dot token'>.</span><span class='asname identifier id'>asname</span>
+  
+  <span class='ansip identifier id'>ansip</span> <span class='lshft op'>&lt;&lt;</span> <span class='@asname ivar id'>@asname</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Mon May 30 22:06:10 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.1 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
