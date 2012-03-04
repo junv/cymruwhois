@@ -13,7 +13,11 @@ module Cymru
   module DNSquery
     def intxt(name)
       dns = Resolv::DNS.new
-      ans = dns.getresource(name, Resolv::DNS::Resource::IN::TXT)
+      begin 
+        ans = dns.getresource(name, Resolv::DNS::Resource::IN::TXT)
+      rescue Resolv::ResolvError
+        return arr = "0|0.0.0.0|CC|NIC|Date".split('|').map {|e| e.upcase.strip}
+      end
       arr = ans.data.split('|').map {|e| e.upcase.strip}
     end
   end
@@ -45,9 +49,12 @@ module Cymru
       @country = ansip[2]
       @registry = ansip[3]
       @allocdate = ansip[4]
-      
+
+      # to address the multi ASN issue for the same IP Block 
+      asparam = ansip[0].split
+ 
       ansasnum = Cymru::ASNumber.new
-      ansasnum.whois(@asnum)
+      ansasnum.whois(asparam[0])
       @asname = ansasnum.asname
       
       ansip << @asname

@@ -2,7 +2,7 @@ require "rubygems"
 
 Gem::Specification.new do |s|
     s.name = "cymruwhois"
-    s.version = "0.0.2"
+    s.version = "0.1.0"
     s.license = "MIT"
     s.author = "Jun C. Valdez"
     s.email = "rubygems@sploitlabs.com"
