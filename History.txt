@@ -2,3 +2,8 @@
 
 * 1 major enhancement:
   * Initial release
+
+=== 0.1.0 2012-03-04
+
+* Added exception handling for CIDR blocks that don't have any records 
+* Workaround on mutiple AS Numbers for the same CIDR block
