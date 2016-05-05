@@ -14,11 +14,24 @@ module Cymru
     def intxt(name)
       dns = Resolv::DNS.new
       begin 
-        ans = dns.getresource(name, Resolv::DNS::Resource::IN::TXT)
+        ans = dns.getresources(name, Resolv::DNS::Resource::IN::TXT)
       rescue Resolv::ResolvError
         return arr = "0|0.0.0.0|CC|NIC|Date".split('|').map {|e| e.upcase.strip}
       end
-      arr = ans.data.split('|').map {|e| e.upcase.strip}
+      ans.map { |entry| entry.data.split('|').map {|e| e.upcase.strip} }
+    end
+  end
+
+  class ASPrefix
+    attr_reader :asnum, :asname, :cidr, :country, :registry, :allocdate
+
+    def initialize asnum, asname, cidr, country, registry, allocdate
+      @asnum     = asnum
+      @asname    = asname
+      @cidr      = cidr
+      @country   = country
+      @registry  = registry
+      @allocdate = allocdate
     end
   end
   
@@ -26,13 +39,14 @@ module Cymru
     include DNSquery
     private :intxt
     
-    attr_reader :asnum, :cidr, :country, :registry, :allocdate, :asname
-    
+    attr_reader :as_prefixes
+
     ORIGIN = "origin.asn.cymru.com"
     ORIGIN6 = "origin6.asn.cymru.com"
     BOGON = "bogons.cymru.com"
     
     def initialize
+      @as_prefixes = []
     end
   
     def whois(addr)
@@ -42,22 +56,24 @@ module Cymru
       elsif ip.ipv6?
         revdns = ip.reverse.sub("ip6.arpa", ORIGIN6)
       end
-      
-      ansip = intxt(revdns)
-      @asnum = ansip[0]
-      @cidr = ansip[1]
-      @country = ansip[2]
-      @registry = ansip[3]
-      @allocdate = ansip[4]
 
-      # to address the multi ASN issue for the same IP Block 
-      asparam = ansip[0].split
- 
-      ansasnum = Cymru::ASNumber.new
-      ansasnum.whois(asparam[0])
-      @asname = ansasnum.asname
-      
-      ansip << @asname
+      ansips = intxt(revdns)
+
+      # process all DNS entries returned
+      ansips.each do |ansip|
+        # process all AS numbers returned per DNS entry
+        ansip[0].split.each do |as_number|
+
+          ansip_cidr = ansip[1]
+
+          ansasnum = Cymru::ASNumber.new
+          ansasnum.whois(as_number)
+
+          @as_prefixes << ASPrefix.new(as_number, ansasnum.asname, ansip_cidr, ansasnum.country, ansasnum.registry, ansasnum.allocdate)
+        end
+      end
+
+      @as_prefixes
     end
     alias :lookup :whois
     
@@ -77,7 +93,7 @@ module Cymru
     def whois(asn)
       @asn = "AS" + asn + ASN
 
-      ans = intxt(@asn)
+      ans = intxt(@asn).first
       @country = ans[1]
       @registry = ans[2]
       @allocdate = ans[3]
