@@ -50,7 +50,8 @@ module Cymru
     end
 
     def whois(addr)
-      detailedwhois(addr).first
+      @as_prefixes = [ detailedwhois(addr).first ]
+      @as_prefixes.first
     end
   
     def detailedwhois(addr)
