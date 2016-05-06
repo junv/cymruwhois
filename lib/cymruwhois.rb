@@ -48,8 +48,12 @@ module Cymru
     def initialize
       @as_prefixes = []
     end
-  
+
     def whois(addr)
+      detailedwhois(addr).first
+    end
+  
+    def detailedwhois(addr)
       ip = IPAddr.new(addr)
       if ip.ipv4?
         revdns = ip.reverse.sub("in-addr.arpa", ORIGIN)
@@ -58,6 +62,8 @@ module Cymru
       end
 
       ansips = intxt(revdns)
+
+      prefixes = []
 
       # process all DNS entries returned
       ansips.each do |ansip|
@@ -69,11 +75,11 @@ module Cymru
           ansasnum = Cymru::ASNumber.new
           ansasnum.whois(as_number)
 
-          @as_prefixes << ASPrefix.new(as_number, ansasnum.asname, ansip_cidr, ansasnum.country, ansasnum.registry, ansasnum.allocdate)
+          prefixes << ASPrefix.new(as_number, ansasnum.asname, ansip_cidr, ansasnum.country, ansasnum.registry, ansasnum.allocdate)
         end
       end
 
-      @as_prefixes
+      @as_prefixes = prefixes
     end
     alias :lookup :whois
     
